@@ -1,9 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  Text,
+  Linking
+} from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -202,7 +210,7 @@ function App() {
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
         <a href={CONFIG.MARKETPLACE_LINK}>
-          <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+          <StyledLogo alt={"logo"} src={"/config/images/logo.gif"} />
         </a>
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
@@ -248,24 +256,14 @@ function App() {
               }}
             >
               <StyledButton
-                onClick={(e) => {
-                  window.open("/config/roadmap.pdf", "_blank");
-                }}
-                style={{
-                  margin: "5px",
-                }}
-              >
-                Roadmap
-              </StyledButton>
-              <StyledButton
                 style={{
                   margin: "5px",
                 }}
                 onClick={(e) => {
                   window.open(CONFIG.MARKETPLACE_LINK, "_blank");
                 }}
-              >
-                {CONFIG.MARKETPLACE}
+              >Website
+              
               </StyledButton>
             </span>
             <s.SpacerSmall />
@@ -276,11 +274,7 @@ function App() {
                 >
                   The sale has ended.
                 </s.TextTitle>
-                <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  You can still find {CONFIG.NFT_NAME} on
-                </s.TextDescription>
+        
                 <s.SpacerSmall />
                 <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
                   {CONFIG.MARKETPLACE}
@@ -291,14 +285,13 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+          Sifu Inu NFTs cost .05 BNB each
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Excluding gas fees.
+                  NFT Staking Coming Soon!
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -402,33 +395,44 @@ function App() {
             <StyledImg
               alt={"example"}
               src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
             />
           </s.Container>
         </ResponsiveWrapper>
+        
         <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
             style={{
               textAlign: "center",
-              color: "var(--primary-text)",
+              color: "var(--footer)",
+              fontWeight: "bold",
+              font: "var(font-link)",
+              
             }}
           >
-            Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-            Once you make the purchase, you cannot undo this action.
+            Please make sure you are connected to the BSC Mainnet.
+            Once your NFT is minted you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />
+
           <s.TextDescription
             style={{
+              font: "var(font-link)",
               textAlign: "center",
-              color: "var(--primary-text)",
+              color: "var(--primary)",
+              fontWeight: "bold"
             }}
           >
-            We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-            successfully mint your NFT. We recommend that you don't lower the
-            gas limit.
-          </s.TextDescription>
+For rewards Stake your Sifu Inu tokens 
+</s.TextDescription>
+
+<Text style={{font: "var(font-link)", fontWeight: "bold", color: 'red'}}
+      onPress={() => Linking.openURL('http://google.com')}>
+  here
+</Text>
+
+
+
         </s.Container>
       </s.Container>
     </s.Screen>

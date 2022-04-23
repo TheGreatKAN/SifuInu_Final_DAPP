@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
-  "SCAN_LINK": "https://polygonscan.com/token/0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
+  "CONTRACT_ADDRESS": "0x3252C7800423f0FD9f8aa96fb653fC0C93Ed64a9",
+  "SCAN_LINK": "https://polygonscan.com/token/0x3252C7800423f0FD9f8aa96fb653fC0C93Ed64a9",
   "NETWORK": {
-    "NAME": "Polygon",
-    "SYMBOL": "Matic",
-    "ID": 137
+    "NAME": "Binance",
+    "SYMBOL": "BNB",
+    "ID": 56
   },
   "NFT_NAME": "The Stripes NFT",
   "SYMBOL": "TSNFT",
-  "MAX_SUPPLY": 992,
-  "WEI_COST": 4000000000000000000,
-  "DISPLAY_COST": 4,
+  "MAX_SUPPLY": 500,
+  "WEI_COST": 50000000000000000,
+  "DISPLAY_COST": 1,
   "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
+  "MARKETPLACE": "",
+  "MARKETPLACE_LINK": "sifuinu.io",
   "SHOW_BACKGROUND": true
 }

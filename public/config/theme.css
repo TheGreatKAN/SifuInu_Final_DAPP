@@ -1,8 +1,12 @@
 :root {
-  --primary: #ebc908;
+  --primary: #ffffff;
   --primary-text: #ffffff;
-  --secondary: #ff1dec;
+  --secondary: #000000;
   --secondary-text: #ffffff;
-  --accent: #505050;
-  --accent-text: #ffffff;
-}
+  --accent: #0703fb;
+  --accent-text: #a1a0a0;
+  --footer:  #f70202;
+  --font-link: font-family: 'Poppins', sans-serif;
+
+  }
+
