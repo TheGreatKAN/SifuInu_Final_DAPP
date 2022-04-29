@@ -40,7 +40,7 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   border-radius: 100%;
   border: none;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
@@ -125,6 +125,7 @@ function App() {
     GAS_LIMIT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
+    WEBSITE: "",
     SHOW_BACKGROUND: false,
   });
 
@@ -147,13 +148,13 @@ function App() {
       })
       .once("error", (err) => {
         console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
+        setFeedback('Sorry, something went wrong please try again.');
         setClaimingNft(false);
       })
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          'WOW, the Sifu Inu NFT is yours! To view and sell visit Oblivion.art'
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -260,7 +261,7 @@ function App() {
                   margin: "5px",
                 }}
                 onClick={(e) => {
-                  window.open(CONFIG.MARKETPLACE_LINK, "_blank");
+                  window.open(CONFIG.WEBSITE, "_blank");
                 }}
               >Website
               
@@ -400,6 +401,8 @@ function App() {
         </ResponsiveWrapper>
         
         <s.SpacerMedium />
+
+
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
             style={{
@@ -427,7 +430,7 @@ For rewards Stake your Sifu Inu tokens
 </s.TextDescription>
 
 <Text style={{font: "var(font-link)", fontWeight: "bold", color: 'red'}}
-      onPress={() => Linking.openURL('http://google.com')}>
+      onPress={() => Linking.openURL('http://sifustaking.io')}>
   here
 </Text>
 
